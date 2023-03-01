@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text enemyText;
     public PlayerController player;
+    public TMP_Text winText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +30,9 @@ public class GameManager : MonoBehaviour
         score = score + 1;
         scoreText.text = score.ToString();
 
-        if ( score == 10)
+        if ( score == 3)
         {
+            winText.text = "You Win!";
             
         }
         Debug.Log("score+1");
