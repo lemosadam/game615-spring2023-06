@@ -11,3 +11,5 @@ Coin byQuaternius
 CAR Model by Ignition Labs [CC-BY] via Poly Pizza
 
 Red Car by J-Toastie [CC-BY] via Poly Pizza
+
+Camel by Poly by Google [CC-BY] via Poly Pizza
