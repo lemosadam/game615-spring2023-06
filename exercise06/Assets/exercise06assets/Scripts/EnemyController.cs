@@ -50,7 +50,7 @@ public class EnemyController : MonoBehaviour
 
      private void OnTriggerEnter(Collider other)
     {
-        // 'other' is the name of the collider that just collided with the object
+        // 'other' is the name of the collidear that just collided with the object
         // that this script ("PlayerController") is attached to. So the if statment
         // below checks to see that that object has the tag "coin". Remember that
         // the tags for GameObjects are assigned in the top left area of the
