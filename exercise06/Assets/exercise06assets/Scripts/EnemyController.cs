@@ -7,12 +7,14 @@ public class EnemyController : MonoBehaviour
 {
     NavMeshAgent nma;
     float newPositionTimer = 0;
+    public GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
         // Grab the reference to the NavMeshAgent on this gameObject.
         nma = gameObject.GetComponent<NavMeshAgent>();
+        
     }
 
     // Update is called once per frame
@@ -44,5 +46,26 @@ public class EnemyController : MonoBehaviour
             finalPosition = hit.position;
         }
         return finalPosition;
+    }
+
+     private void OnTriggerEnter(Collider other)
+    {
+        // 'other' is the name of the collider that just collided with the object
+        // that this script ("PlayerController") is attached to. So the if statment
+        // below checks to see that that object has the tag "coin". Remember that
+        // the tags for GameObjects are assigned in the top left area of the
+        // inspector when you select the obect.
+        if (other.CompareTag("coin"))
+        {
+            Destroy(other.gameObject);
+            gm.IncrementEnemy();
+        }
+
+        if (other.CompareTag("player"))
+        {
+            Debug.Log("collided");
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            rb.AddForce(gameObject.transform.forward * -10000);
+        }
     }
 }

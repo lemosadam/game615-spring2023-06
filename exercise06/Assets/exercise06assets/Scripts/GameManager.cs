@@ -7,8 +7,11 @@ public class GameManager : MonoBehaviour
 
 {
     int score = 0;
+    int enemyscore = 0;
     public TMP_Text scoreText;
+    public TMP_Text enemyText;
     public PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +28,19 @@ public class GameManager : MonoBehaviour
     {
         score = score + 1;
         scoreText.text = score.ToString();
+
+        if ( score == 10)
+        {
+            
+        }
+        Debug.Log("score+1");
+
+    }
+
+    public void IncrementEnemy()
+    {
+        enemyscore = enemyscore + 1;
+        enemyText.text = enemyscore.ToString();
+        Debug.Log("score+1");
     }
 }
