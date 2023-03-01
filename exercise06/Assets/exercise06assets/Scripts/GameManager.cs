@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text enemyText;
     public PlayerController player;
     public TMP_Text winText;
+    public TMP_Text loseText;
 
     
     // Start is called before the first frame update
@@ -45,5 +46,10 @@ public class GameManager : MonoBehaviour
         enemyscore = enemyscore + 1;
         enemyText.text = enemyscore.ToString();
         Debug.Log("score+1");
+
+        if ( enemyscore == 10)
+        {
+            loseText.text = "You Lose!";
+        }
     }
 }
